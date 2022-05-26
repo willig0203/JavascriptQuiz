@@ -37,6 +37,20 @@ h4 {
 
 }
 
+
+.mainstartquestions{
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    width: fit-content; 
+}
+
+
+.hidden {
+    display: none;
+}
+
+
 /* MEDIA QUERY FOR SMALLER DESKTOP SCREENS AND SMALLER */
 @media screen and (max-width: 980px) {
    
