@@ -3,28 +3,21 @@ var quizEl = document.querySelector("#btnstartquiz");
 
 quizEl.addEventListener("click", removeStartPage);
 
+var mainstartEl = document.querySelector(".mainstartquestions");
 
-
-var btnSelected1 = document.querySelector("#btnAns1");
-var btnSelected2 = document.querySelector("#btnAns2");
-var btnSelected3 = document.querySelector("#btnAns3");
-var btnSelected4 = document.querySelector("#btnAns4");
-btnSelected1.addEventListener("click", selectAnswer);
-btnSelected2.addEventListener("click", selectAnswer);
-btnSelected3.addEventListener("click", selectAnswer);
-btnSelected4.addEventListener("click", selectAnswer);
+mainstartEl.addEventListener("click", selectAnswer);
 
 function selectAnswer(event) {
     console.log("selectAnswer" + " " + event.target);
-    console.log(object.innerHTML);
+    console.log(event.target.id);
 }
 
 
 
 function removeStartPage(event) {
-    quizEl.parentElement.remove("mainstartquiz");
+    startPageVisible(false);
     startTimer();
-    showQuestions();
+    questionsPageVisible(true);
     // display for.......
 };
 
@@ -41,23 +34,42 @@ function startTimer() {
                 minute = 5;
             }
         }
+        console.log("sec == 00 && minute == 0")
+        if (sec == 00 && minute == 0) {
+            console.log("stop time and switch page")
+            questionsPageVisible(false);
+            endOfTestPageVisible(true);
+        }
     }, 1000);
 };
 
 
+function startPageVisible(visiblityState) {
+    object = document.querySelector('.mainstartquiz');
+    if (visiblityState)
+        object.classList.remove('hidden');
+    else
+        object.classList.add('hidden');
+}
 
-function hidQuestions(event) {
-    const button = document.querySelector('.mainstartquestions');
-    button.classList.add('hidden');
-};
+function questionsPageVisible(visiblityState) {
+    object = document.querySelector('.mainstartquestions');
+    if (visiblityState)
+        object.classList.remove('hidden');
+    else
+        object.classList.add('hidden');
+}
 
-function showQuestions(event) {
-    const button = document.querySelector('.mainstartquestions');
-    button.classList.remove('hidden');
-};
+function endOfTestPageVisible(visiblityState) {
+    object = document.querySelector('.endoftestpage');
+    if (visiblityState)
+        object.classList.remove('hidden');
+    else
+        object.classList.add('hidden');
+}
 
-hidQuestions();
-
+questionsPageVisible(false);
+endOfTestPageVisible(false);
 
 
 

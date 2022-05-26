@@ -45,7 +45,26 @@ h4 {
     width: fit-content; 
 }
 
+.btnansquestions {
+    display: block;
+    /* display: flex;
+    flex-direction: column; */
+    margin: auto;
+    width: fit-content;
+    background: #0066cc;
+    border: none;
+    border-radius: 3px;
+    color: #fff;
+}
 
+.btnansquestions:hover {
+    background: #003366;
+    transition: 0.5s background;
+    cursor: pointer;
+  }
+
+
+/* page content not visible */
 .hidden {
     display: none;
 }
