@@ -12,6 +12,8 @@
     text-align: right;
 }
 
+
+
 .mainstartquiz {
     display: flex;
     flex-direction: column;
@@ -38,17 +40,18 @@ h4 {
 }
 
 
+
 .mainstartquestions{
     display: flex;
     flex-direction: column;
     margin: auto;
-    width: fit-content; 
+    width: fit-content;
 }
 
 .btnansquestions {
-    display: block;
-    /* display: flex;
-    flex-direction: column; */
+    /* display: block; */
+    display: flex;
+    flex-direction: column;
     margin: auto;
     width: fit-content;
     background: #0066cc;
@@ -63,6 +66,24 @@ h4 {
     cursor: pointer;
   }
 
+
+
+
+.endoftestpage {
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    width: fit-content;
+}
+
+
+
+.showHighScores {
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    width: fit-content;
+}
 
 /* page content not visible */
 .hidden {

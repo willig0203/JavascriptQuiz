@@ -18,7 +18,7 @@
         </button>
         <span class="spacer">
             <label class="txt-timer">
-                Timer:
+                Remaining Time:
             </label>
             <label class="val-timer" id=#quiztimeleft>
                 val
@@ -49,7 +49,7 @@
 
     <main class="mainstartquestions">
         <div>
-            <h2>
+            <h2 class="quizQuestion" id="quizQuestionid">
                 Question
             </h2>
             <br>
@@ -57,12 +57,15 @@
             <button class="btnansquestions" id="btnAns1" type="button">        
                 1. Guess
             </button>
+            <br>
             <button class="btnansquestions" id="btnAns2" type="button">
                 2. Guess
             </button>
+            <br>
             <button class="btnansquestions" id="btnAns3" type="button">
                 3. Guess
             </button>
+            <br>
             <button class="btnansquestions" id="btnAns4" type="button">
                 4. Guess
             </button>
@@ -70,20 +73,38 @@
     </main>
 
     <div class="endoftestpage">
-
-        <h2>HTML Forms</h2>
-
-        <form action="/action_page.php">
+        <h2>Final Result!</h2>
+        <span >
+            <label class="txt-finalscore">
+                Final Score:
+            </label>
+            <label class="val-finalscore" id=#finalscore>
+                val
+            </label>
+        </span>
+        <br>
+        <form class="submitForm" onsubmit="doSomething()">
           <label for="fname">First name:</label><br>
           <input type="text" id="fname" name="fname" value="John"><br>
           <label for="lname">Last name:</label><br>
           <input type="text" id="lname" name="lname" value="Doe"><br><br>
           <input type="submit" value="Submit">
-        </form> 
-        
-        <p>If you click the "Submit" button, the form-data will be sent to a page called "/action_page.php".</p>
-        
+        </form>        
     </div>
+
+
+    <div class="showHighScores">
+        <br>
+        <label for="fname">page:</label><br>
+        <label for="fname">score:</label><br>
+        <button class="goToStartPage" id="?" type="button">
+            Back? to the future?
+        </button>
+        <button class="clearAllScores" id="?" type="button">
+            Clear Saved Score for everyone?
+        </button>
+    </div>
+
 
     <script src="./assets/js/script.js"></script>
 </body>
