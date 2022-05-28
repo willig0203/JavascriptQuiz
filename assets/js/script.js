@@ -33,7 +33,7 @@ quizEl.addEventListener("click", removeStartPage);
 function removeStartPage(event) {
     pageVisible('.mainstartquiz', false);
     startTimer();
-    pageVisible('.mainstartquestions', true);
+    pageVisible('.mainstartquestions', true);    
     btnDisabled('.btnhighscores', true);
     
     
@@ -48,6 +48,10 @@ mainstartEl.addEventListener("click", selectAnswer);
 function selectAnswer(event) {
     console.log("selectAnswer" + " " + event.target);
     console.log(event.target.id);
+    
+    // check if answer in the loaded question
+    console.log("check if answer");
+
 }
 
 
@@ -173,6 +177,8 @@ function createQuestions() {
 
 createQuestions();
 
+var answer = null;
+
 function loadQuestion(num) {
 
     var question = questionsArray[num];
@@ -183,6 +189,11 @@ function loadQuestion(num) {
     document.getElementById("btnAns2").innerHTML = question['btnAns2'];
     document.getElementById("btnAns3").innerHTML = question['btnAns3'];
     document.getElementById("btnAns4").innerHTML = question['btnAns4'];
+
+    answer = question['answerVal'];
+    console.log(answer);
+
+
 }
 
 // var quiz = {};
