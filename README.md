@@ -13,6 +13,6 @@ Built With:
 
 * https://willig0203.github.io/JavascriptQuiz/
 
-* The URL of the GitHub repository. Give the repository a unique name and include a README describing the project.
+* https://github.com/willig0203/JavascriptQuiz
 
 
