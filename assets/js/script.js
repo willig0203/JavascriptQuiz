@@ -46,12 +46,14 @@ function removeStartPage(event) {
 var mainstartEl = document.querySelector(".mainstartquestions");
 mainstartEl.addEventListener("click", selectAnswer);
 function selectAnswer(event) {
-    console.log("selectAnswer" + " " + event.target);
-    console.log(event.target.id);
-    
-    // check if answer in the loaded question
-    console.log("check if answer");
 
+    if (event.target.id == answer) {
+        console.log("correct!!!!!!!!!");
+        console.log("if is correct add to total and go to next question ");
+    } else {
+        console.log("answer is wrong!!!!!");
+        console.log("if is wrong subtract from time go to next question ");
+    }
 }
 
 
@@ -63,7 +65,8 @@ function doSomething() {
     btnDisabled('.btnhighscores', false);
 }
 
-
+var totalScore = 0;
+var subtractTime = 0;
 
 function startTimer() {
     var minute = 1;
@@ -79,6 +82,9 @@ function startTimer() {
                 pageVisible('.mainstartquestions', false);
                 pageVisible('.endoftestpage', true);
             } else {
+
+                // if time left subtract for wrong answer....
+                
                 minute--;
                 sec = 60;
             }
