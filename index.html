@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <title>Document</title>
+</head>
+
+<header></header>
+
+<body>
+    <div class="main">
+        <button class="btnhighscores" id="highscores" type="button">
+            View High Scores
+        </button>
+        <span class="spacer">
+            <label class="txt-timer">
+                Remaining Time:
+            </label>
+            <label class="val-timer" id=#quiztimeleft>
+                val
+            </label>
+        </span>
+    </div>
+
+    <div class="mainstartquiz">
+        <h2>
+            Coding Quiz Challenge
+        </h2>
+        <br>
+        <p>
+        <h5>
+            Try to answer the following code related questions within the time limit.
+        </h5>
+        <br>
+        <h5>
+            Keep in mind that incorrect answers will penalize your score/time by ten seconds!
+        </h5>
+        <br>
+        </p>
+        <button class="btnstartquiz" id="btnstartquiz" type="button">
+            Start Quiz
+        </button>
+    </div>
+
+
+    <main class="mainstartquestions">
+        <div>
+            <h2 class="quizQuestion" id="quizQuestionid">
+                Question
+            </h2>
+            <br>
+    
+            <button class="btnansquestions" id="btnAns1" type="button">        
+                1. Guess
+            </button>
+            <br>
+            <button class="btnansquestions" id="btnAns2" type="button">
+                2. Guess
+            </button>
+            <br>
+            <button class="btnansquestions" id="btnAns3" type="button">
+                3. Guess
+            </button>
+            <br>
+            <button class="btnansquestions" id="btnAns4" type="button">
+                4. Guess
+            </button>
+        </div>
+    </main>
+
+    <div class="endoftestpage">
+        <h2>Final Result!</h2>
+        <span >
+            <label class="txt-finalscore">
+                Final Score:
+            </label>
+            <label class="val-finalscore" id=#finalscore>
+                val
+            </label>
+        </span>
+        <br>
+        <form class="submitForm" onsubmit="doSomething()">
+          <label for="fname">First name:</label><br>
+          <input type="text" id="fname" name="fname" value="John"><br>
+          <label for="lname">Last name:</label><br>
+          <input type="text" id="lname" name="lname" value="Doe"><br><br>
+          <input type="submit" value="Submit">
+        </form>        
+    </div>
+
+
+    <div class="showHighScores">
+        <br>
+        <label for="fname">page:</label><br>
+        <label for="fname">score:</label><br>
+        <button class="goToStartPage" id="?" type="button">
+            Back? to the future?
+        </button>
+        <button class="clearAllScores" id="?" type="button">
+            Clear Saved Score for everyone?
+        </button>
+    </div>
+
+
+    <script src="./assets/js/script.js"></script>
+</body>
+
+</html>
