@@ -33,13 +33,10 @@ quizEl.addEventListener("click", removeStartPage);
 function removeStartPage(event) {
     pageVisible('.mainstartquiz', false);
     startTimer();
-    pageVisible('.mainstartquestions', true);    
+    pageVisible('.mainstartquestions', true);
     btnDisabled('.btnhighscores', true);
-    
-    
-    // display for.......
     loadQuestion(0);
-
+    // question = question + 1;
 };
 
 
@@ -48,11 +45,30 @@ mainstartEl.addEventListener("click", selectAnswer);
 function selectAnswer(event) {
 
     if (event.target.id == answer) {
-        console.log("correct!!!!!!!!!");
+        questionIsAnswerd = true;
+        question = question + 1;
+        if (question > 4) {
+            console.log("end of questions...");
+            // go to the score page
+            clearInterval(tmr);
+            pageVisible('.mainstartquestions', false);
+            pageVisible('.endoftestpage', true);
+            return;
+        }
+        loadQuestion(question);
         console.log("if is correct add to total and go to next question ");
     } else {
-        console.log("answer is wrong!!!!!");
-        console.log("if is wrong subtract from time go to next question ");
+
+        // if (sec == 00) {
+        //     if (minute == 0) {
+                questionIsAnswerd = false;
+                console.log("answer is wrong!!!!!");
+                // if their is enough time
+                console.log("if is wrong subtract from time go to next question ");
+        //     }
+        // }
+
+
     }
 }
 
@@ -68,27 +84,35 @@ function doSomething() {
 var totalScore = 0;
 var subtractTime = 0;
 
+var minute = 1;
+var sec = 60;
+
+var question = 0;
+var questionIsAnswerd = false;
+
+let tmr = null;
+
 function startTimer() {
-    var minute = 1;
-    var sec = 60;
+
     tmr = setInterval(function () {
         var timeDisplay = document.getElementById("#quiztimeleft").innerHTML = minute + " : " + sec;
         sec--;
 
-        if (sec == 00) {
-            if (minute == 0) {
-                // timeDisplay = "0";
+        if (sec == 00) 
+        {
+            if (minute == 0)
+             {
                 clearInterval(tmr);
                 pageVisible('.mainstartquestions', false);
                 pageVisible('.endoftestpage', true);
-            } else {
-
-                // if time left subtract for wrong answer....
-                
+            } else 
+            {
                 minute--;
                 sec = 60;
             }
-
+        }
+        if (questionIsAnswerd) {
+            loadQuestion(question);
         }
 
     }, 1000);
